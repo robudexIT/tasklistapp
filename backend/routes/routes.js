@@ -40,6 +40,9 @@ router.post('/task', async(req, res,next)=> {
    try {
         const task = await Task.create({taskName: req.body.taskName})
         console.log('Successfully adding task with taskId of:', task.taskId)
+        if(task.taskId){
+	  res.status(200).json({message:'Successfully adding task',taskId:task.taskId})
+        }
    }catch(error){
     console.log(error)
    }
