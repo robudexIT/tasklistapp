@@ -5,9 +5,8 @@
             taskList: {},
             name: 'Rogmer Bulaclac',
             taskName: '',
-            // apiAddr: 'http://backend-env.eba-52mwysjg.us-east-1.elasticbeanstalk.com',
-            //apiAddr: 'http://210.1.86.214:3000'
-            apiAddr: 'http://localhost:3001'
+            apiAddr: 'http://backendapp-env.eba-immn2eqq.us-east-1.elasticbeanstalk.com',
+            
         }
     },
     methods: {
