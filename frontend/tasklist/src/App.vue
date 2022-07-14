@@ -4,12 +4,15 @@
         return {
             taskList: {},
             name: 'Rogmer Bulaclac',
-            taskName: ''
+            taskName: '',
+            // apiAddr: 'http://backend-env.eba-52mwysjg.us-east-1.elasticbeanstalk.com',
+            //apiAddr: 'http://210.1.86.214:3000'
+            apiAddr: 'http://localhost:3001'
         }
     },
     methods: {
         async getTaskList(){
-            const taskList = await fetch('http://210.1.86.214:3000/getTaskList',{
+            const taskList = await fetch(`${this.apiAddr}/getTaskList`,{
                 method:'GET',
               
             })
@@ -18,7 +21,7 @@
         },
         async addTask(){
             const data = { taskName: this.taskName}
-            const addTask = await fetch('http://210.1.86.214:3000/task',{
+            const addTask = await fetch(`${this.apiAddr}/task`,{
                 headers: {
                     'Content-Type': 'application/json'
                     
@@ -39,7 +42,7 @@
             console.log(e.target.id)
             const taskId = e.target.id
             try {
-               const deleteTask = await fetch(`http://210.1.86.214:3000/task/${taskId}`,{
+               const deleteTask = await fetch(`${this.apiAddr}/task/${taskId}`,{
                     method: 'DELETE'
                 })
                 const response = await deleteTask.json()
