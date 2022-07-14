@@ -16,7 +16,7 @@ DATABASE: MYSQL (RDS instance)
 
 1. RDS: 
  Launch RDS instance (under free tier if possible)
- Put RDS instace under private subnet(no Public Access
+ Put RDS instance under private subnet(no Public Access
  Create new sg-group for RDS Instance
  
  
