@@ -32,7 +32,7 @@
                 body: JSON.stringify(data)
             })
              const response = await addTask.json()
-             if(response.addtask){
+             if(response.addTask){
                 alert(response.message)
                 this.getTaskList()
                 this.taskName = ''
