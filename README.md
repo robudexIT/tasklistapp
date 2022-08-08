@@ -47,8 +47,8 @@ Note:All services used is on the same region.
           - /deletetask/{taskId}/DELETE - your deletetask function
           - /gettasklist/GET - your gettasklist function
           
-        - Because /deletetask/ has params {taskId} on its path we need to pass this to lambda function.
-            - DELETE method, click Integration Request 
+        - Because /deletetask/ has params {taskId} on its path, we need to pass this to lambda function.
+            - on /deletetask/{taskId}/DELETE, click Integration Request 
             - Choose Mapping Templates -> When there are no templates defined (recommended)
             - Under Content-Type  type application/json and add object below and save.
              {
@@ -56,22 +56,27 @@ Note:All services used is on the same region.
              }
          
        - To use the API we need to deploy it.
-          Click Actions  and Click Deploy API
+          Click Actions and Click Deploy API
           choose New Stage 
             Stage name: dev
             Stage Descpiton : stage description
             Deployment Description: deployement description
         -Under Stages, you will see the newly deploy api.   
             
-         copy the root endpoint that somethin look like this
+         copy the root endpoint that something look like this
             https://tmtlklvjge.execute-api.us-east-1.amazonaws.com/dev
-       - Open  frontend/tasklist/src/App.vue replce apiAddr with your endpoint.
+       - Open  frontend/tasklist/src/App.vue replace apiAddr with your endpoint.
        -     
    # S3 
      - Create unique bucket name , enable the static webhosting  and create bucket policy to allow access to to this bucket.
-     - on frontend/tasklist/ run npm run build.
+     - on frontend/tasklist/ type (npm run build) and press enter.
      - it will create dist folder under takslist project.
        upload all files and folder under dist folder (without dist folder)
      
      Test your application by visiting your static website url and try adding ang deleting task.
-     Check Your dynamodb table if the task is recorded 
+     Check Your dynamodb table if the task is recorded and delete if you delete task.
+     
+     Note: Dont forget to delete your api gateway and other aws service which used in this project.
+     
+     
+     Best Regards.
