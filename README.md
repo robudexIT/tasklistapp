@@ -7,7 +7,7 @@ This Project is my own version of TodoList
 - VueJs - FrontEnd (running locally)
 - DATABASE: MYSQL (running locally)
 - Adding Basic Css-style
-(functional but very simple app with no authentication, api endpoints and its running locally on my computer)
+- (functional but very simple app with no authentication, api endpoints and its running locally on my computer)
  
 
 
