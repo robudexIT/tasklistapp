@@ -43,11 +43,11 @@ Note:All services used is on the same region.
        - Choose Import from Swagger or Open API 3
        - Click Select Swagger File button and upload json file under backen/api and click IMPORT
        - For Integration type choose Lambda Function
-          /addtask/POST - your addtask function
-          /deletetask/{taskId}/DELETE - your deletetask function
-          /gettasklist/GET - your gettasklist function
+          - /addtask/POST - your addtask function
+          - /deletetask/{taskId}/DELETE - your deletetask function
+          - /gettasklist/GET - your gettasklist function
           
-        - Becuase /deletetask/ has params {taskId} on its path we need to pass this to lambda function.
+        - Because /deletetask/ has params {taskId} on its path we need to pass this to lambda function.
             - DELETE method, click Integration Request 
             - Choose Mapping Templates -> When there are no templates defined (recommended)
             - Under Content-Type  type application/json and add object below and save.
