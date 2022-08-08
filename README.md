@@ -56,5 +56,22 @@ Note:All services used is on the same region.
              }
          
        - To use the API we need to deploy it.
-          Click Actions   
-       
+          Click Actions  and Click Deploy API
+          choose New Stage 
+            Stage name: dev
+            Stage Descpiton : stage description
+            Deployment Description: deployement description
+        -Under Stages, you will see the newly deploy api.   
+            
+         copy the root endpoint that somethin look like this
+            https://tmtlklvjge.execute-api.us-east-1.amazonaws.com/dev
+       - Open  frontend/tasklist/src/App.vue replce apiAddr with your endpoint.
+       -     
+   # S3 
+     - Create unique bucket name , enable the static webhosting  and create bucket policy to allow access to to this bucket.
+     - on frontend/tasklist/ run npm run build.
+     - it will create dist folder under takslist project.
+       upload all files and folder under dist folder (without dist folder)
+     
+     Test your application by visiting your static website url and try adding ang deleting task.
+     Check Your dynamodb table if the task is recorded 
