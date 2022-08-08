@@ -6,7 +6,8 @@ This Project is my own version of TodoList
 NodeJS/Express - Backend/API (running locally)
 VueJs - FrontEnd (running locally)
 DATABASE: MYSQL (running locally)
-(functional but very simple app with no authentication, styling, api endpoints and its running locally on my computer)
+Adding Basic Css-style
+(functional but very simple app with no authentication, api endpoints and its running locally on my computer)
  
 
 
