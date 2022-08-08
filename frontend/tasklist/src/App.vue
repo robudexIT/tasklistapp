@@ -9,7 +9,7 @@
     },
     methods: {
         async getTaskList(){
-            const taskList = await fetch('http://210.1.86.214:3000/getTaskList',{
+            const taskList = await fetch('http://localhost:3000/getTaskList',{
                 method:'GET',
               
             })
@@ -18,7 +18,7 @@
         },
         async addTask(){
             const data = { taskName: this.taskName}
-            const addTask = await fetch('http://210.1.86.214:3000/task',{
+            const addTask = await fetch('http://localhost:3000/task',{
                 headers: {
                     'Content-Type': 'application/json'
                     
@@ -39,7 +39,7 @@
             console.log(e.target.id)
             const taskId = e.target.id
             try {
-               const deleteTask = await fetch(`http://210.1.86.214:3000/task/${taskId}`,{
+               const deleteTask = await fetch(`http://localhost:3000/task/${taskId}`,{
                     method: 'DELETE'
                 })
                 const response = await deleteTask.json()
@@ -61,26 +61,29 @@
         }
     },
     created(){
+       
         this.getTaskList()
     }
    }
 </script>
 
 <template>
- <h1>Welcome to TaskList App</h1>
- <ul>
-    <li v-for="task in taskList.taskList" :key="task.taskId">
-        <p>{{task.taskName}} <span> <button v-bind:id="task.taskId" @click="deleteTask">Delete</button></span></p>
-       
-        <!-- <button>Update</button> -->
-    </li>
- </ul>
- <!-- <button @click="getTaskList">GETTASKLIST</button> -->
- <form >
-  
-    <input type="text"  v-model="taskName">
-    <button @click.prevent="addTask">AddTask</button>
- </form>
+<div>
+    <h1>Welcome to TaskList App</h1>
+    <ul>
+        <li v-for="task in taskList.taskList" :key="task.taskId">
+            <p>{{task.taskName}} <span> <button v-bind:id="task.taskId" @click="deleteTask">Delete</button></span></p>
+        
+            <!-- <button>Update</button> -->
+        </li>
+    </ul>
+    <!-- <button @click="getTaskList">GETTASKLIST</button> -->
+    <form >
+    
+        <input type="text"  v-model="taskName">
+        <button @click.prevent="addTask">AddTask</button>
+    </form>
+ </div>
 </template>
 
 <style>
